@@ -1,0 +1,16 @@
+<div class="form-container">
+    <form class="login-form" [formGroup]="userdata" (ngSubmit)="onSubmit(userdata.value)">
+      
+         <h1 class="login_header">Login Details</h1>
+         <div class="login_content">
+         <label>Username<span>*</span></label>
+         <input type="text" name="username" formControlName="username">
+         <label>Password<span>*</span></label>
+         <input type="password" name="password" formControlName="password">
+    </div>
+
+         <button [disabled]="!userdata.valid" value="submit">Login</button>
+    </form>
+
+    
+</div>

@@ -1,0 +1,32 @@
+
+ <h1 class="heading">Hi {{name}}</h1>
+ <p class="subheading">Please fill in the customer details</p>
+ <form class="form-container" [formGroup]="customerdata" (ngSubmit)="onSubmit(customerdata.value)">
+   <h1 class="customer-header">Customer data</h1>
+   <label>Firstname<span>*</span></label>
+   <input type="text" name="firstname" formControlName="firstname">
+   <label>Lastname<span>*</span></label>
+   <input type="text" name="lastname" formControlName="lastname">
+   <label>Phone No</label>
+   <input type="number" name="phoneno" formControlName="phoneno">
+   <label>Address</label>
+   <input type="address" name="address" formControlName="address">
+   <button [disabled]="!customerdata.valid" value="submit">Submit</button>
+   </form>
+
+<div id="customerdetails" style="display: none; margin:0 auto;">
+  <table>
+    <tr>
+      <td>Firstname</td>
+      <td>Lastname</td>
+      <td>Phoneno</td>
+      <td>Address</td>
+    </tr>
+    <tr>
+      <td>{{firstname}} </td>
+      <td>{{lastname}}</td>
+      <td>{{phoneno}}</td>
+      <td>{{address}}</td>
+    </tr>
+  </table>
+</div>
